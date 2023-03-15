@@ -4,7 +4,7 @@ app = target/aarch64-unknown-none/release/mini-os
 .PHONY: all
 all: $(app)
 
-$(app):
+$(app): .cargo src aarch64-qemu.ld aarch64-unknown-none.json Cargo.toml toolchain.toml
 	cargo build --release
 
 debug: debug.gdb

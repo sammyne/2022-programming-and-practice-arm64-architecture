@@ -18,3 +18,5 @@ RUN RUST_VERSION=nightly-2023-03-12                                   &&\
   rm -rf /root/.cargo/registry                                        &&\
   rm -rf /root/.cargo/git                                             &&\
   rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+ENTRYPOINT []
