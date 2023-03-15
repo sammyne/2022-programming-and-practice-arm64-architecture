@@ -1,14 +1,17 @@
 
 app = target/aarch64-unknown-none/release/mini-os
 
+srcs = $(shell find src)
+
 .PHONY: all
 all: $(app)
 
-$(app): .cargo src aarch64-qemu.ld aarch64-unknown-none.json Cargo.toml toolchain.toml
-	cargo build --release
+$(app): .cargo $(srcs) aarch64-qemu.ld aarch64-unknown-none.json Cargo.toml toolchain.toml
+	@cargo clean
+	@cargo build --release
 
-debug: debug.gdb
-	gdb-multiarch -x debug.gdb
+gdb: debug.gdb
+	@gdb-multiarch -x debug.gdb
 
 dump: $(app)
 	@aarch64-linux-gnu-objdump -D $<
@@ -21,8 +24,8 @@ run: $(app)
 		-nographic 																			\
 		-kernel $<
 
-serve-for-debug: $(app)
-	qemu-system-aarch64 															\
+debug: $(app)
+	@qemu-system-aarch64 															\
 		-machine virt 																	\
 		-m 1024M 																				\
 		-cpu cortex-a72 																\
