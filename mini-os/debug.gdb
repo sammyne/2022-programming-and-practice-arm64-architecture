@@ -8,4 +8,7 @@ i r x4
 i r x5
 i r x6
 c
+i r x1
+i r x6
+i r x7
 quit
