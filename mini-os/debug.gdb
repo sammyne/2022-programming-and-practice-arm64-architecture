@@ -23,4 +23,6 @@ c
 i r x6
 i r x7
 c
+x/8wx $x2-32
+c
 quit
