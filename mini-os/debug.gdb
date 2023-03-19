@@ -20,4 +20,7 @@ i r x4
 x $x4-8
 x $x4
 c
+i r x6
+i r x7
+c
 quit

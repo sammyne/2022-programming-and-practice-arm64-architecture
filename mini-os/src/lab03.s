@@ -6,3 +6,5 @@ lab03:
 
   mov x4, 0x500000
   str x3, [x4], #8
+
+  ret
