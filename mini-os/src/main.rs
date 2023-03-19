@@ -56,7 +56,9 @@ pub extern "C" fn not_main() {
 
         // FIXME: this is buggy for unknown reasons
         //let mut buf = [0u8; 32];
-        //let _ = memset_impl(&mut buf, 123);
+        
+        let buf = 0x400b0000u64 as *mut u8;
+        let _ = memset_impl(buf, 123, 15);
     }
 }
 
@@ -68,12 +70,12 @@ unsafe fn memset_aligned_1byte(buf: *mut u8, v: u8, n: u64) {
     }
 }
 
-unsafe fn memset_impl(buf: &mut [u8], v: u8) -> &mut [u8] {
+unsafe fn memset_impl(buf: *mut u8, v: u8, nbuf: u64) -> *mut u8 {
     const ALIGN: u64 = 16;
 
-    let mut p: *mut u8 = buf.as_mut_ptr();
+    let mut p = buf;
     let addr = p as u64;
-    let mut remaining = buf.len() as u64;
+    let mut remaining = nbuf;
 
     if (addr & (ALIGN - 1)) != 0 {
         let unaligned_len = ALIGN - (addr & (ALIGN - 1));
