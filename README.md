@@ -126,3 +126,4 @@ Disassembly of section .text.boot:
 
 ## 4. 参考文献
 - [sammyne/arm64-bare-metal-program-in-rust](https://github.com/sammyne/arm64-bare-metal-program-in-rust)
+- [GDB x command](https://visualgdb.com/gdbreference/commands/x)

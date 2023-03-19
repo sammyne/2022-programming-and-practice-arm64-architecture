@@ -12,6 +12,7 @@ global_asm!(include_str!("lab01.s"));
 global_asm!(include_str!("lab02.s"));
 global_asm!(include_str!("lab03.s"));
 global_asm!(include_str!("lab04.s"));
+global_asm!(include_str!("lab05.s"));
 
 global_asm!(include_str!("breakpoint_hook.s"));
 
@@ -20,6 +21,7 @@ extern "C" {
     fn lab02();
     fn lab03();
     fn lab04();
+    fn lab05();
 
     fn breakpoint_hook();
 }
@@ -45,6 +47,9 @@ pub extern "C" fn not_main() {
         breakpoint_hook(); // 添加钩子函数辅助断点调试
 
         lab04();
+        breakpoint_hook(); // 添加钩子函数辅助断点调试
+        
+        lab05();
         breakpoint_hook(); // 添加钩子函数辅助断点调试
     }
 }
