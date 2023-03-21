@@ -13,6 +13,14 @@ $(app): .cargo $(srcs) aarch64-qemu.ld aarch64-unknown-none.json Cargo.toml tool
 gdb: debug.gdb
 	@gdb-multiarch -x debug.gdb
 
+quick-gdb:
+	@gdb-multiarch 	\
+		-ex "set confirm off" \
+		-ex "add-symbol-file target/aarch64-unknown-none/release/mini-os" \
+		-ex "target remote tcp::1234" \
+		-ex "set arch aarch64" 				\
+		-ex "break breakpoint_hook"
+
 dump: $(app)
 	@aarch64-linux-gnu-objdump -D $<
 
