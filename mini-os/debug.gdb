@@ -13,4 +13,8 @@ i r x2
 i r x3
 i r x4
 c
+p/t $x2
+p/t $x3
+p/t $x4
+c
 quit
