@@ -1,21 +1,22 @@
   .global lab01
 lab01:
-  # 0x40080000 是 mini-os 的起始内存地址
-  mov x1, 0x40080000
-  mov x3, 16
+  mov x1, 0xffffffffffffffff
+  mov x2, 1
 
-  # 读取0x4008_0000地址的值到x0寄存器
-  ldr x4, [x1]
+  adds xzr, x1, x2
 
-  # 读取 0x4008_0008 地址的值
-	ldr x5, [x1, #8]
+  adc x3, xzr, xzr
 
-	# 读取 x1+x3 地址的值
-	ldr x6, [x1, x3]
+  mov x1, 1
+  mov x2, 2
 
-	# 读取(x1+ x3<<3) 地址的值
-  # lsl 后的值必须为 0 或 3
-  # 注意：编译出来的程序没有这个地址，因此略过这条指令
-	# ldr x7, [x1, x3, lsl #3]
+  cmp x1, x2
+  adc x4, xzr, xzr
+
+  cmp x2, x2
+  adc x5, xzr, xzr
+
+  cmp x2, x1
+  adc x6, xzr, xzr
   
   ret
