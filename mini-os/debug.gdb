@@ -17,4 +17,8 @@ p/t $x2
 p/t $x3
 p/t $x4
 c
+p/x $x0
+p/x $x3
+p/x $x4
+c
 quit
