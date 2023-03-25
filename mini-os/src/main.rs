@@ -6,11 +6,11 @@ use core::panic::PanicInfo;
 
 use mini_os::pl011;
 
-global_asm!(include_str!("start.s"));
+global_asm!(include_str!("asm/start.s"));
 
-global_asm!(include_str!("lab01.s"));
+global_asm!(include_str!("asm/lab01.s"));
 
-global_asm!(include_str!("breakpoint_hook.s"));
+global_asm!(include_str!("asm/breakpoint_hook.s"));
 
 extern "C" {
     fn lab01();
