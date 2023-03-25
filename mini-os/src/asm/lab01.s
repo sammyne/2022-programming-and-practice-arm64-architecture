@@ -1,3 +1,5 @@
+  .extern init_pg_dir
+
   .data
   .align 3
 my_test_data:
@@ -13,6 +15,9 @@ lab01:
 
   ldr x2, =my_test_data
   ldr x3, my_test_data
+
+  adrp x4, init_pg_dir
+  ldr x5, =init_pg_dir
 
   ldr x30, [sp], #16 // restore link register  
   ret

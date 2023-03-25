@@ -8,5 +8,7 @@ p/x $x0
 p/x $x1
 p/x $x2
 p/x $x3
+p/x $x4
+p/x $x5
 c
 q

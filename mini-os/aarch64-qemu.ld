@@ -11,4 +11,8 @@ SECTIONS
     . = ALIGN(8);
     . = . + 0x4000;
     LD_STACK_PTR = .;
+
+    . = 0x40400000;
+	init_pg_dir = .;
+	. += 4096;
 }

@@ -15,7 +15,7 @@ global_asm!(include_str!("asm/lab01.s"));
 global_asm!(include_str!("asm/breakpoint_hook.s"));
 
 extern "C" {
-    fn hello_world();
+    //fn hello_world();
 
     fn lab01();
 
