@@ -124,6 +124,12 @@ Disassembly of section .text.boot:
 ## 3. TODO
 - [ ] 考虑是否实现 [Adding a little bit of Rust to AARCH64](https://krinkinmu.github.io/2020/12/13/adding-rust-to-aarch64.html) 教程的 PL011 模块。
 
-## 4. 参考文献
+## 4. 温馨提示
+- GDB 打印变量的相关指令
+  - [display](https://web.mit.edu/gnu/doc/html/gdb_10.html#SEC59)
+  - [print](https://web.mit.edu/gnu/doc/html/gdb_10.html#SEC53)
+  - [x](https://web.mit.edu/gnu/doc/html/gdb_10.html#SEC58)
+
+## 5. 参考文献
 - [sammyne/arm64-bare-metal-program-in-rust](https://github.com/sammyne/arm64-bare-metal-program-in-rust)
 - [GDB x command](https://visualgdb.com/gdbreference/commands/x)
