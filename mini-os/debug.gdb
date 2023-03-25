@@ -4,5 +4,9 @@ target remote tcp::1234
 set arch aarch64
 break breakpoint_hook
 c
+p/x $x0
+p/x $x1
+p/x $x2
+p/x $x3
 c
 q

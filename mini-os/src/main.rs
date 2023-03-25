@@ -8,12 +8,16 @@ use mini_os::pl011;
 
 global_asm!(include_str!("asm/start.s"));
 
-global_asm!(include_str!("asm/hello_world.s"));
+// global_asm!(include_str!("asm/hello_world.s"));
+
+global_asm!(include_str!("asm/lab01.s"));
 
 global_asm!(include_str!("asm/breakpoint_hook.s"));
 
 extern "C" {
     fn hello_world();
+
+    fn lab01();
 
     fn breakpoint_hook();
 }
@@ -29,7 +33,9 @@ pub extern "C" fn not_main() {
     pl011::write(out_str);
 
     unsafe {
-        hello_world();
+        // hello_world();
+
+        lab01();
         breakpoint_hook(); // 添加钩子函数辅助断点调试
     }
 }
