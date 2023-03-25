@@ -19,6 +19,10 @@ display/t $x3
 c
 c
 c
-c
 undisplay 3-4
+
+c
+p $x4
+p $x5
+c
 q
