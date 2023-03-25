@@ -25,4 +25,6 @@ c
 p $x4
 p $x5
 c
+p $x0
+c
 q

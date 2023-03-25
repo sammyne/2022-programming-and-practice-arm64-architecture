@@ -1,4 +1,5 @@
   .text
+  .global csel_test
 csel_test:
   str x30, [sp, #-16]! // save link register to avoid corrpution by bl
 
