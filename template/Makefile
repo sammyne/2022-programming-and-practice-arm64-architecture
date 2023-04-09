@@ -16,6 +16,14 @@ gdb: debug.gdb
 dump: $(app)
 	@aarch64-linux-gnu-objdump -D $<
 
+quick-gdb:
+	@gdb-multiarch 	\
+		-ex "set confirm off" \
+		-ex "add-symbol-file target/aarch64-unknown-none/release/mini-os" \
+		-ex "target remote tcp::1234" \
+		-ex "set arch aarch64" 				\
+		-ex "break breakpoint_hook"
+
 run: $(app)
 	@qemu-system-aarch64 															\
 		-M virt 																				\
