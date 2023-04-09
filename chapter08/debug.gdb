@@ -6,4 +6,7 @@ break breakpoint_hook
 c
 p $x0
 c
+c
+p $x0
+c
 q
