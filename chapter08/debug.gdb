@@ -10,4 +10,8 @@ c
 p $x0
 c
 c
+# lab05
+p $x3
+p $x4
+c
 q
